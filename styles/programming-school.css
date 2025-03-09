@@ -173,8 +173,8 @@ img {
 .hero-bg {
   position: absolute;
   inset: 0;
-  opacity: 0.1;
-  background-image: url('https://placeholder.pics/svg/1600x800');
+  opacity: 0.4;
+  background-image: url('../images/hero.jpeg');
   background-size: cover;
   background-position: center;
 }
