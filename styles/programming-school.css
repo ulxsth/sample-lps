@@ -136,7 +136,6 @@ img {
   color: var(--white) !important;
   padding: 0.5rem 1rem;
   border-radius: var(--border-radius);
-  text-align: center;
   font-weight: 500;
 }
 
@@ -174,7 +173,7 @@ img {
   position: absolute;
   inset: 0;
   opacity: 0.3;
-  background-image: url('../images/hero.jpeg');
+  background-image: url('../images/programming-school/hero.jpeg');
   background-size: cover;
   background-position: center;
 }
@@ -385,6 +384,10 @@ img {
   color: var(--text-light);
 }
 
+.success-image.rounded-corners img {
+  border-radius: 8px;
+}
+
 /* 料金プラン */
 .pricing {
   padding: 4rem 0;
@@ -518,42 +521,141 @@ img {
   box-shadow: var(--shadow-md);
 }
 
+/* キャンペーン */
 .campaign-box {
   margin-top: 3rem;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
   background-color: var(--orange-light);
-  border: 1px solid rgba(245, 124, 0, 0.2);
+  border: 2px solid var(--orange);
   border-radius: var(--border-radius);
-  padding: 1.5rem;
+  padding: 2rem;
+  position: relative;
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.campaign-ribbon {
+  position: absolute;
+  top: 10px;
+  right: -30px;
+  background-color: var(--orange);
+  color: var(--white);
+  padding: 0.5rem 2rem;
+  font-weight: bold;
+  transform: rotate(45deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
 .campaign-box h3 {
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  color: var(--orange-dark);
 }
 
-.campaign-box p {
+.campaign-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.discount-badge {
+  background-color: var(--orange);
+  color: var(--white);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(-5deg);
+  box-shadow: var(--shadow);
+  position: relative;
+}
+
+.discount-badge::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  border: 2px dashed var(--white);
+  border-radius: 50%;
+  animation: spin 30s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.discount-amount {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.discount-label {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.campaign-details {
+  width: 100%;
+  max-width: 500px;
+}
+
+.payment-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+}
+
+.campaign-row {
+  background-color: rgba(245, 124, 0, 0.15);
+  margin-top: 0.5rem;
+  padding: 1rem 0.75rem;
+  border-left: 4px solid var(--orange);
+}
+
+.payment-label {
+  font-weight: bold;
+}
+
+.payment-value, .payment-total {
   text-align: center;
-  margin-bottom: 0.5rem;
 }
 
 .line-through {
   text-decoration: line-through;
+  color: var(--gray-600);
 }
 
 .campaign-price {
   color: var(--orange);
   font-weight: bold;
+  font-size: 1.25rem;
 }
 
 .campaign-highlight {
   text-align: center;
   font-weight: bold;
-  color: var(--orange);
+  color: var(--orange-dark);
+  font-size: 1.25rem;
+  margin: 1.5rem 0;
+  padding: 0.5rem;
+  background-color: rgba(245, 124, 0, 0.1);
+  border-radius: var(--border-radius);
 }
 
 .campaign-cta {
@@ -561,9 +663,43 @@ img {
   text-align: center;
 }
 
+.campaign-cta .cta-button-large {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: var(--shadow-lg);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.2);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* レスポンシブ対応 */
 @media (min-width: 768px) {
-  .pricing-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .campaign-content {
+    flex-direction: row;
+    justify-content: center;
+  }
+  
+  .discount-badge {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .discount-amount {
+    font-size: 1.75rem;
+  }
+  
+  .discount-label {
+    font-size: 1.5rem;
   }
 }
 
