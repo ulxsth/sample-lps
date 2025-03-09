@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sample Projects</title>
+  <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <h1>Sample Projects</h1>
+    </div>
+  </header>
+  <main class="main-content">
+    <div class="container">
+      <div class="card-grid">
+        <div class="card">
+          <img src="/images/programming-school/thumbnail.png" alt="プログラミングスクールのサムネイル" class="card-thumbnail">
+          <a href="samples/programming-school.html">
+          <h2>プログラミングスクール</h2>
+        </a>
+          <p>3ヵ月でエンジニア転職をサポートするプログラミングスクール「フォーチュンコード（FortuneCode）」のLPサンプルです。</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; <span id="current-year"></span> yotu All Rights Reserved.</p>
+    </div>
+  </footer>
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+</body>
+
+</html>
